@@ -1,0 +1,222 @@
+/* Add styling for the word label (number and length) */
+.word-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  width: 100%;
+}
+
+.word-label {
+  min-width: 60px;
+  display: flex;
+  align-items: center;
+  font-size: 1.1em;
+  justify-self: start;
+}
+
+.word-cells {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.word-grid {
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.word-grid-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #ecf0f1;
+  text-align: left;
+}
+
+.word-grid-header h2 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.target-sentence {
+  background: #e8f5e8;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #27ae60;
+}
+
+.target-sentence span {
+  color: #2c3e50;
+  font-size: 0.9rem;
+}
+
+.target-sentence strong {
+  color: #27ae60;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.words-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+
+.word-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  justify-content: center;
+}
+
+.word-row-unavailable {
+  background: #dbe2e9 !important;
+}
+
+.word-row.highlighted {
+  background: #eaf6ff;
+  box-shadow: 0 0 0 2px #3498db;
+}
+
+.word-row:hover {
+  background: rgba(52, 152, 219, 0.05);
+}
+
+.word-cells {
+  display: flex;
+}
+
+.letter-cell {
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid #bdc3c7;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: white;
+  color: #2c3e50;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.letter-cell:hover {
+  border-color: #3498db;
+}
+
+.letter-cell:focus,
+.letter-cell.focused {
+  border-color: #2980b9;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.letter-cell.highlighted {
+  border-color: #e74c3c;
+  background: rgba(231, 76, 60, 0.1);
+}
+
+.letter-cell.highlighted:focus {
+  border-color: #c0392b;
+  box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2);
+}
+
+.word-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 120px;
+}
+
+.word-status {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+.hint-info {
+  font-size: 0.8rem;
+  color: #e74c3c;
+  font-weight: 600;
+  background: rgba(231, 76, 60, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.locked-info {
+  font-size: 0.8rem;
+  color: #95a5a6;
+  font-style: italic;
+}
+
+.highlighted-column-display {
+  text-align: center;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  border: 2px dashed #e74c3c;
+}
+
+.highlighted-column-display h3 {
+  margin: 0 0 0.5rem 0;
+  color: #e74c3c;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.highlighted-letters {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5rem;
+  color: #e74c3c;
+  font-family: monospace;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .word-grid {
+    padding: 0.75rem;
+  }
+  
+  .letter-cell {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+  
+  .word-row {
+    gap: 0.5rem;
+  }
+  
+  .word-cells {
+    gap: 0.125rem;
+  }
+  
+  .highlighted-letters {
+    font-size: 1.2rem;
+    letter-spacing: 0.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .letter-cell {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.9rem;
+  }
+  
+  .highlighted-letters {
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
+  }
+}
